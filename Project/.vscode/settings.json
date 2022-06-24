@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "bsp_led.h": "c",
+        "stm32f10x.h": "c",
+        "bsp_i2c.h": "c",
+        "bsp_uart_dma.h": "c",
+        "datatype_config.h": "c",
+        "delay.h": "c",
+        "misc.h": "c",
+        "stm32f10x_conf.h": "c",
+        "core_cm3.h": "c",
+        "system_stm32f10x.h": "c",
+        "bsp.h": "c",
+        "stm32f10x_dma.h": "c"
+    },
+    "git.ignoreLimitWarning": true
+}
