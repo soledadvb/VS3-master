@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F10X_MD</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Libraries\CMSIS;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\User;.\BSP;..\Project</IncludePath>
+              <IncludePath>..\Libraries\CMSIS;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\User;.\BSP</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -493,6 +493,11 @@
               <FileType>1</FileType>
               <FilePath>..\User\DataScope_DP.c</FilePath>
             </File>
+            <File>
+              <FileName>mpu6050.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\mpu6050.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -509,9 +514,9 @@
           <GroupName>BSP</GroupName>
           <Files>
             <File>
-              <FileName>delay.c</FileName>
+              <FileName>bsp_i2c_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\BSP\delay.c</FilePath>
+              <FilePath>.\BSP\bsp_i2c_gpio.c</FilePath>
             </File>
             <File>
               <FileName>bsp_led.c</FileName>
@@ -519,24 +524,24 @@
               <FilePath>.\BSP\bsp_led.c</FilePath>
             </File>
             <File>
-              <FileName>bsp_uart_dma.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\BSP\bsp_uart_dma.c</FilePath>
-            </File>
-            <File>
               <FileName>bsp_rcc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\bsp_rcc.c</FilePath>
+              <FilePath>.\BSP\bsp_rcc.c</FilePath>
             </File>
             <File>
-              <FileName>bsp_rcc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\bsp_rcc.h</FilePath>
-            </File>
-            <File>
-              <FileName>bsp_i2c_gpio.c</FileName>
+              <FileName>bsp_usart_dma.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\BSP\bsp_i2c_gpio.c</FilePath>
+              <FilePath>.\BSP\bsp_usart_dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\BSP\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\BSP\bsp_tim.c</FilePath>
             </File>
           </Files>
         </Group>

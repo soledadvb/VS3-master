@@ -18,11 +18,13 @@
 ".\objects\stm32f10x_it.o"
 ".\objects\data_handle.o"
 ".\objects\datascope_dp.o"
-".\objects\delay.o"
-".\objects\bsp_led.o"
-".\objects\bsp_uart_dma.o"
-".\objects\bsp_rcc.o"
+".\objects\mpu6050.o"
 ".\objects\bsp_i2c_gpio.o"
+".\objects\bsp_led.o"
+".\objects\bsp_rcc.o"
+".\objects\bsp_usart_dma.o"
+".\objects\delay.o"
+".\objects\bsp_tim.o"
 --library_type=microlib --strict --scatter ".\Objects\VS300.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

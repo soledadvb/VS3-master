@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2022 by LEAD Corp, All Rights Reserved.
  */
-#include "bsp_uart_dma.h"
+#include "bsp_usart_dma.h"
 
 uint8_t SendBuff[BUFF_SIZE];
 uint8_t ReceiveBuff[BUFF_SIZE];
@@ -40,7 +40,6 @@ void USART1_Config(void)
     USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
     USART_Init(USART1, &USART_InitStructure);
 
-    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
     NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
     NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;

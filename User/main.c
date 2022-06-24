@@ -10,17 +10,21 @@
  */
 
 #include "bsp.h"
+#include "mpu6050.h"
 
 int main(void)
 {
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
     // SysTick_Init();
     LED_Config();
     USART_Config();
     USART3_DMA_Tx_Config();
-    // TODO I2C_Config();
-    // TODO FLASH_Config();
+    MPU6050_Init();
+    if (MPU6050ReadID() == 0) /* 如果没有检测到 MPU6050 传感器 */
+    {
+        LED1_ON;
+    }
 
-    Delay_ms(2000);
     USART_DMACmd(USART3, USART_DMAReq_Tx, ENABLE);
     for (;;)
     {

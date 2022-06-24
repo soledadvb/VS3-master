@@ -32,6 +32,7 @@
 .\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: .\BSP\bsp_i2c_gpio.h
 .\objects\main.o: .\BSP\bsp_led.h
-.\objects\main.o: .\BSP\bsp_uart_dma.h
-.\objects\main.o: ..\Project\bsp_rcc.h
+.\objects\main.o: .\BSP\bsp_usart_dma.h
+.\objects\main.o: .\BSP\bsp_rcc.h
 .\objects\main.o: .\BSP\delay.h
+.\objects\main.o: ..\User\mpu6050.h

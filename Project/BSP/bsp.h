@@ -8,15 +8,15 @@
  *
  * Copyright (c) 2022 by LEAD Corp, All Rights Reserved.
  */
-#ifndef __BSP_H_
-#define __BSP_H_
+#ifndef __BSP_H
+#define __BSP_H
 
 #include "stm32f10x.h"
 #include <stdio.h>
 
 #include "bsp_i2c_gpio.h"
 #include "bsp_led.h"
-#include "bsp_uart_dma.h"
+#include "bsp_usart_dma.h"
 #include "bsp_rcc.h"
 #include "delay.h"
 

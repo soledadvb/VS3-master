@@ -23,7 +23,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
-#include "bsp_uart_dma.h"
+#include "bsp_usart_dma.h"
 
 extern void TimingDelay_Decrement(void);
 /** @addtogroup STM32F10x_StdPeriph_Template

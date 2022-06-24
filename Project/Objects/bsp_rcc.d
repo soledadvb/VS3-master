@@ -1,5 +1,5 @@
-.\objects\bsp_rcc.o: bsp_rcc.c
-.\objects\bsp_rcc.o: bsp_rcc.h
+.\objects\bsp_rcc.o: BSP\bsp_rcc.c
+.\objects\bsp_rcc.o: BSP\bsp_rcc.h
 .\objects\bsp_rcc.o: ..\Libraries\CMSIS\stm32f10x.h
 .\objects\bsp_rcc.o: ..\Libraries\CMSIS\core_cm3.h
 .\objects\bsp_rcc.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
