@@ -37,6 +37,7 @@ int main(void)
             printf("\r\n加速度： %8d%8d%8d    ", Accel[0], Accel[1], Accel[2]);
             printf("陀螺仪： %8d%8d%8d    ", Gyro[0], Gyro[1], Gyro[2]);
             printf("温度： %8.2f", Temp);
+            printf("测试: %d ",1);
         }
     }
 }
