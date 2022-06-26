@@ -185,17 +185,17 @@ void Usart_SendHalfWord(USART_TypeDef *pUSARTx, uint16_t ch)
 
 int fputc(int ch, FILE *f)
 {
-    Usart_SendByte(USART1, (uint8_t)ch);
-    while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET)
+    Usart_SendByte(USART3, (uint8_t)ch);
+    while (USART_GetFlagStatus(USART3, USART_FLAG_TXE) == RESET)
         ;
     return ch;
 }
 
 int fgetc(FILE *f)
 {
-    while (USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET)
+    while (USART_GetFlagStatus(USART3, USART_FLAG_RXNE) == RESET)
         ;
-    return (int)USART_ReceiveData(USART1);
+    return (int)USART_ReceiveData(USART3);
 }
 
 void USART3_DMA_Tx_Config()

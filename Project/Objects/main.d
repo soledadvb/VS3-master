@@ -36,3 +36,4 @@
 .\objects\main.o: .\BSP\bsp_rcc.h
 .\objects\main.o: .\BSP\delay.h
 .\objects\main.o: ..\User\mpu6050.h
+.\objects\main.o: ..\User\stm32f10x_it.h

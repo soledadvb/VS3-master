@@ -24,6 +24,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
 #include "bsp_usart_dma.h"
+#include "mpu6050.h"
 
 extern void TimingDelay_Decrement(void);
 /** @addtogroup STM32F10x_StdPeriph_Template
@@ -40,6 +41,13 @@ extern void TimingDelay_Decrement(void);
 /******************************************************************************/
 /*            Cortex-M3 Processor Exceptions Handlers                         */
 /******************************************************************************/
+
+int task_readdata_finish;
+
+// 声明外部变量
+extern short Accel[3];
+extern short Gyro[3];
+extern float Temp;
 
 /**
  * @brief  This function handles NMI exception.
@@ -154,27 +162,36 @@ void SysTick_Handler(void)
 {
 }*/
 
-/**
- * @}
- */
+void TIM3_IRQHandler(void)
+{
+  if (!task_readdata_finish)
+  {
+    MPU6050ReadAcc(Accel);
+    MPU6050ReadGyro(Gyro);
+    MPU6050_ReturnTemp(&Temp);
+
+    task_readdata_finish = 1; //标志位置1，表示需要在主循环处理MPU6050数据
+  }
+}
+
 void USART3_IRQHandler(void)
 {
-//  uint16_t t;
-//  if (USART_GetITStatus(USART3, USART_IT_IDLE) != RESET) //检查中断是否发生
-//  {
-//    DMA_Cmd(USARTx_DMAx_TX_CHANNEL, DISABLE); //关闭DMA传输
+  //  uint16_t t;
+  //  if (USART_GetITStatus(USART3, USART_IT_IDLE) != RESET) //检查中断是否发生
+  //  {
+  //    DMA_Cmd(USARTx_DMAx_TX_CHANNEL, DISABLE); //关闭DMA传输
 
-//    t = DMA_GetCurrDataCounter(USARTx_DMAx_TX_CHANNEL); //获取剩余的数据数量
+  //    t = DMA_GetCurrDataCounter(USARTx_DMAx_TX_CHANNEL); //获取剩余的数据数量
 
-//    Usart_Send(USART3, SendBuff, BUFF_SIZE - t); //向电脑返回数据（接收数据数量 = SENDBUFF_SIZE - 剩余未传输的数据数量）
+  //    Usart_Send(USART3, SendBuff, BUFF_SIZE - t); //向电脑返回数据（接收数据数量 = SENDBUFF_SIZE - 剩余未传输的数据数量）
 
-//    DMA_SetCurrDataCounter(USARTx_DMAx_TX_CHANNEL, BUFF_SIZE); //重新设置传输的数据数量
+  //    DMA_SetCurrDataCounter(USARTx_DMAx_TX_CHANNEL, BUFF_SIZE); //重新设置传输的数据数量
 
-//    DMA_Cmd(USARTx_DMAx_TX_CHANNEL, ENABLE); //开启DMA传输
+  //    DMA_Cmd(USARTx_DMAx_TX_CHANNEL, ENABLE); //开启DMA传输
 
-//    USART_ReceiveData(USART3);                //读取一次数据，不然会一直进中断
-//    USART_ClearFlag(USART3, USART_FLAG_IDLE); //清除串口空闲中断标志位
-//  }
+  //    USART_ReceiveData(USART3);                //读取一次数据，不然会一直进中断
+  //    USART_ClearFlag(USART3, USART_FLAG_IDLE); //清除串口空闲中断标志位
+  //  }
 }
 
 /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/

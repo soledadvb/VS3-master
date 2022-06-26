@@ -19,4 +19,5 @@ void TIM3_Config(u16 arr, u16 psc)
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 
     TIM_Cmd(TIM3, ENABLE);
+    
 }
